@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Карты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Карты</h1>
+        {% if cards %}
+            {% for el in cards %}
+             <div class="alert alert-warning">
+                <h3>{{ el }}</h3>
+                <p> {{ el.bonus }} бонусов </p>
+                 <a href="{% url 'card-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+             </div>
+            {% endfor %}
+        {% else %}
+            <p>Записей пока нет :(</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

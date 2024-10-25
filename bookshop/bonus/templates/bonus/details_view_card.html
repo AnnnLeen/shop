@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Карты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ card.owner }}</h1>
+        <p>Номер карты: {{ card.card_number }}</p>
+        <p>Количество бонусов: {{ card.bonus }}</p>
+        <p>Дата деактивации: {{ card.expiration_date }}</p>
+        <a href="{% url 'card-delete' card.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'card-update' card.id %}" class="btn btn-info">Редактировать</a>
+    </div>
+
+{% endblock %}

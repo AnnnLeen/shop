@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Карты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ client.surname }}</h1><h1>{{ client.name }}</h1>
+        <p>{{ client.client_id }}</p>
+        <p>{{ client.number }}</p>
+        <p>{{ client.birth }}</p>
+        <p>{{ client.email }}</p>
+        <a href="{% url 'client-delete' client.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'client-update' client.id %}" class="btn btn-info">Редактировать</a>
+    </div>
+
+{% endblock %}

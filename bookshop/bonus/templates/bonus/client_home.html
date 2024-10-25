@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Клиенты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Клиенты</h1>
+        {% if clients %}
+            {% for el in clients%}
+             <div class="alert alert-warning">
+                <h3>{{ el }}</h3>
+                 <p>{{ el.number }}</p>
+                 <p>{{ el.email }}</p>
+                 <a href="{% url 'client-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+             </div>
+            {% endfor %}
+        {% else %}
+            <p>Записей пока нет :(</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

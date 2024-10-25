@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по добавлению бонусной карты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма по добавлению бонусной карты</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label>Владелец:</label>
+            {{ form.owner }}<br>
+            {{ form.card_number }}<br>
+            {{ form.bonus }}<br>
+            <label>Дата деактивации:</label>
+            {{ form.expiration_date }}<br>
+            <button class="btn btn-success" type="submit">Добавить карту</button>
+            <span>{{ error }}</span>
+
+
+        </form>
+    </div>
+
+{% endblock %}
